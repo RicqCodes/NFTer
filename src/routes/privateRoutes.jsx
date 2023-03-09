@@ -2,7 +2,8 @@ import { Route } from "react-router-dom";
 
 import Layout from "../layout/Layout";
 import NFTPage from "../pages/NFTPage";
-import ProtectedRoutes from "./routesManager/ProtectedRoutes";
+
+import ProtectedRoutes from "./routesManager/protectedRoutes";
 
 export const privateRoutes = (
   <Route element={<ProtectedRoutes />}>
