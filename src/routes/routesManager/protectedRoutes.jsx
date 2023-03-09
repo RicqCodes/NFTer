@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Route, useNavigate, Outlet, Navigate } from "react-router-dom";
 import { useWeb3 } from "@/utils/hooks/useWeb3";
 
-function ProtectedRoute() {
+function ProtectedRoutes() {
   const { isConnected, account } = useWeb3();
   const navigate = useNavigate();
 
@@ -15,4 +15,4 @@ function ProtectedRoute() {
   return <Outlet />;
 }
 
-export default ProtectedRoute;
+export default ProtectedRoutes;
