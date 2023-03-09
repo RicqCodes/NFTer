@@ -12,8 +12,7 @@ export const getNFTsFromWallet = async (walletAddress) => {
       {
         headers: {
           accept: "application/json",
-          "X-API-Key":
-            "IJL0CZ711LORjoSksOwOPQl6hnBfgHwuvYHDW2UVxDWXhxrpqa5KEHJEdJpaGb4J",
+          "X-API-Key": import.meta.env.VITE_MORALIS_API_KEY,
         },
       }
     );

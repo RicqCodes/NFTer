@@ -21,7 +21,6 @@ const NftList = () => {
     account && getNft();
   }, [account]);
 
-
   return (
     <>
       {!isEthereum && isConnected && (
@@ -50,9 +49,15 @@ const NftList = () => {
             </Center>
           ) : (
             <CardContent>
-              {allNFTs?.map((nft, index) => {
-                return <NftCard key={index} nft={nft} />;
-              })}
+              {allNFTs.length > 0 ? (
+                allNFTs?.map((nft, index) => {
+                  return <NftCard key={index} nft={nft} />;
+                })
+              ) : (
+                <WarningText>
+                  You don't have any NFT on this wallet!
+                </WarningText>
+              )}
             </CardContent>
           )}
         </NftListElement>
