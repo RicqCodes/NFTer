@@ -8,7 +8,7 @@ import { color, device } from "@/styles/reuseable/utils.styled";
 const HeroText = () => {
   return (
     <>
-      <HeroTextElement>
+      <HeroTextElement data-aos="zoom-out">
         <Content>
           <Text>
             <span>

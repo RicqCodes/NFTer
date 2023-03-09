@@ -8,7 +8,7 @@ import image from "../../../../../assets/alt.jpg";
 const HeroImage = () => {
   return (
     <>
-      <HeroImageContainer>
+      <HeroImageContainer data-aos="slide-down">
         <div>
           <NftCard nft={image} />
         </div>

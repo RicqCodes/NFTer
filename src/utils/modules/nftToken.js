@@ -17,7 +17,6 @@ export const getNFTsFromWallet = async (walletAddress) => {
     );
 
     const data = response.data.result;
-    console.log(data);
     const metadata = data?.map((d) => {
       const parsedData = JSON.parse(d.metadata);
       return {
