@@ -40,7 +40,6 @@ export const Web3Provider = ({ children }) => {
         const networkId = await provider.request({
           method: "net_version",
         });
-        console.log(networkId);
         if (networkId !== "1") {
           setIsEthereum(false);
         } else {
@@ -57,7 +56,6 @@ export const Web3Provider = ({ children }) => {
     await checkMetamaskInstalled();
     try {
       const accounts = await web3.eth.requestAccounts();
-      console.log(accounts);
       setAccount(accounts[0]);
     } catch (error) {
       toast.error(error.message);

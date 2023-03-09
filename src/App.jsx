@@ -18,8 +18,10 @@ const App = () => {
   return (
     <>
       <Toaster />
-      <Routes>{publicRoutes}</Routes>
-      <Routes>{privateRoutes}</Routes>
+      <Routes>
+        {publicRoutes}
+        {privateRoutes}
+      </Routes>
     </>
   );
 };
