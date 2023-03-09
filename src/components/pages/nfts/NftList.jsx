@@ -49,7 +49,7 @@ const NftList = () => {
             </Center>
           ) : (
             <CardContent>
-              {allNFTs.length > 0 ? (
+              {allNFTs?.length > 0 ? (
                 allNFTs?.map((nft, index) => {
                   return <NftCard key={index} nft={nft} />;
                 })
