@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-// import web3 from "../modules/web3";
 import Web3 from "web3";
 
 // create the context
@@ -25,7 +24,7 @@ export const Web3Provider = ({ children }) => {
         setAccount(account);
         setIsConnected(true);
       } else {
-        // setIsConnected(false);
+        setIsConnected(false);
       }
     } catch (error) {
       throw new Error("Metamask is not installed");
@@ -40,6 +39,7 @@ export const Web3Provider = ({ children }) => {
         const networkId = await provider.request({
           method: "net_version",
         });
+        console.log(networkId);
         if (networkId !== "1") {
           setIsEthereum(false);
         } else {
@@ -57,6 +57,7 @@ export const Web3Provider = ({ children }) => {
     try {
       const accounts = await web3.eth.requestAccounts();
       setAccount(accounts[0]);
+      return true;
     } catch (error) {
       toast.error(error.message);
     }

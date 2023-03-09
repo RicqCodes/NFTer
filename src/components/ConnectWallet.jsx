@@ -4,16 +4,22 @@ import { TfiAngleRight } from "react-icons/tfi";
 import metamask from "@/assets/wolf.svg";
 import { useWeb3 } from "@/utils/hooks/useWeb3";
 import { color } from "@/styles/reuseable/utils.styled";
+import { useModal } from "../utils/hooks/useModal";
 
 const ConnectWallet = () => {
   const { isConnected, connectWallet } = useWeb3();
+  const { toggle } = useModal();
 
   return (
     <>
       <Content>
         <span>Choose your preferred wallet:</span>
         <Wallets>
-          <Wallet onClick={connectWallet}>
+          <Wallet
+            onClick={async () => {
+              (await connectWallet()) && toggle.handleToggle();
+            }}
+          >
             <div>
               <img src={metamask} alt="" />
               <span>
@@ -23,7 +29,7 @@ const ConnectWallet = () => {
             <TfiAngleRight />
           </Wallet>
         </Wallets>
-        {isConnected === false && !window?.ethereum ? (
+        {isConnected === false && (
           <ErrorText>
             <small>
               You don't have metamask installed, please install{" "}
@@ -35,8 +41,6 @@ const ConnectWallet = () => {
               </a>
             </small>
           </ErrorText>
-        ) : (
-          ""
         )}
       </Content>
     </>

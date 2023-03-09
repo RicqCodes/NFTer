@@ -3,7 +3,6 @@ import { NavLink, useLocation } from "react-router-dom";
 import { BiWallet } from "react-icons/bi";
 import { FaWallet } from "react-icons/fa";
 
-import NftDetails from "../../components/nft/NftDetails";
 import ConnectWallet from "../../components/ConnectWallet";
 import Button from "@/components/Button";
 import Logo from "@/components/Logo";
@@ -143,7 +142,7 @@ const Navigation = styled.div`
     background: ${() => color()};
     box-shadow: ${() => shadow("xxxl")};
     flex-direction: column;
-    z-index: 10;
+    z-index: 999;
     align-items: initial;
     padding: 24px 32px;
     justify-content: center;

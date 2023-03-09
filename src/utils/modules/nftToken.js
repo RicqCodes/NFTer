@@ -1,5 +1,7 @@
 // import { Alchemy, Network } from "alchemy-sdk";
 import axios from "axios";
+import { toast } from "react-hot-toast";
+
 import { resolveLink } from "../helpers";
 
 export const getNFTsFromWallet = async (walletAddress) => {
@@ -32,6 +34,6 @@ export const getNFTsFromWallet = async (walletAddress) => {
 
     return metadata;
   } catch (error) {
-    toast.error(error);
+    toast.error(error.message);
   }
 };

@@ -10,7 +10,7 @@ const HeroImage = () => {
     <>
       <HeroImageContainer data-aos="slide-down">
         <div>
-          <NftCard nft={image} />
+          <NftCard />
         </div>
       </HeroImageContainer>
     </>

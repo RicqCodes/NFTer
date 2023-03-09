@@ -11,7 +11,11 @@ const NftCard = ({ nft }) => {
 
   return (
     <>
-      <NftCardContainer onClick={handleToggle} ref={toggleRef}>
+      <NftCardContainer
+        onClick={() => (nft ? handleToggle : null)}
+        ref={toggleRef}
+        data-aos="slide-up"
+      >
         <CardHeader>
           <p>
             <strong>P.</strong>

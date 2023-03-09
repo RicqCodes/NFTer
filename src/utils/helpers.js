@@ -14,3 +14,13 @@ export function extractNumberFromString(str) {
   const result = str.match(regex);
   return result ? parseInt(result[0]) : null;
 }
+
+export const extractErrorMessage = (errorString) => {
+  const errorMessage = errorString.message;
+  const prefix = "Error: ";
+  const index = errorMessage.indexOf(prefix);
+  if (index !== -1) {
+    return errorMessage.slice(index + prefix.length);
+  }
+  return errorMessage;
+};
