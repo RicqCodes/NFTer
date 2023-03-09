@@ -60,7 +60,7 @@ export const Web3Provider = ({ children }) => {
       console.log(accounts);
       setAccount(accounts[0]);
     } catch (error) {
-      toast.error(error);
+      toast.error(error.message);
     }
   };
 
