@@ -25,7 +25,7 @@ export const Web3Provider = ({ children }) => {
         setAccount(account);
         setIsConnected(true);
       } else {
-        setIsConnected(false);
+        // setIsConnected(false);
       }
     } catch (error) {
       throw new Error("Metamask is not installed");

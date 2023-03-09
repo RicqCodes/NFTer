@@ -7,6 +7,7 @@ import { color } from "@/styles/reuseable/utils.styled";
 
 const ConnectWallet = () => {
   const { isConnected, connectWallet } = useWeb3();
+
   return (
     <>
       <Content>
@@ -22,7 +23,7 @@ const ConnectWallet = () => {
             <TfiAngleRight />
           </Wallet>
         </Wallets>
-        {isConnected === false && (
+        {!window?.ethereum ? (
           <ErrorText>
             <small>
               You don't have metamask installed, please install{" "}
@@ -34,6 +35,8 @@ const ConnectWallet = () => {
               </a>
             </small>
           </ErrorText>
+        ) : (
+          ""
         )}
       </Content>
     </>
