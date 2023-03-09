@@ -23,7 +23,7 @@ const ConnectWallet = () => {
             <TfiAngleRight />
           </Wallet>
         </Wallets>
-        {!window?.ethereum ? (
+        {isConnected === false && !window?.ethereum ? (
           <ErrorText>
             <small>
               You don't have metamask installed, please install{" "}
