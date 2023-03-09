@@ -71,7 +71,6 @@ const NftCardContainer = styled.div`
   box-shadow: none;
   bottom: 0;
 
-  &:hover,
   &:active {
     bottom: 30px;
     box-shadow: ${() => shadow("xxxl")};
@@ -88,6 +87,7 @@ const CardBody = styled.div`
   display: flex;
   gap: 24px;
   flex-direction: column;
+  overflow: hidden;
 
   > div:last-child {
     display: flex;
@@ -110,6 +110,13 @@ const CardImage = styled.div`
   width: 100%;
   height: 250px;
   border: 1px solid ${() => color("primary", 100)};
+  transition: all 0.5s;
+
+  @media (hover: hover) {
+    &:hover {
+      scale: 1.1;
+    }
+  }
 
   img {
     width: 100%;
