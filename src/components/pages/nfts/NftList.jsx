@@ -28,10 +28,8 @@ const NftList = () => {
           You are on a wrong chain. Connect wallet to Ethereum network
         </WarningText>
       )}
-
-      {!isConnected ? (
-        <WarningText>Please connect your wallet!</WarningText>
-      ) : (
+      {!isConnected && <WarningText>Please connect your wallet!</WarningText>}:
+      {isConnected && isEthereum && (
         <NftListElement>
           {isLoading ? (
             <Center>
@@ -49,7 +47,7 @@ const NftList = () => {
             </Center>
           ) : (
             <CardContent>
-              {allNFTs?.length > 0 ? (
+              {allNFTs?.length > 0 && isEthereum ? (
                 allNFTs?.map((nft, index) => {
                   return <NftCard key={index} nft={nft} />;
                 })
@@ -107,5 +105,5 @@ const WarningText = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 18px;
 `;
