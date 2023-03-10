@@ -40,10 +40,10 @@ export const Web3Provider = ({ children }) => {
           method: "net_version",
         });
         console.log(networkId);
-        if (networkId !== "1") {
-          setIsEthereum(false);
-        } else {
+        if (networkId === "1" || "0x1" || "0xf00") {
           setIsEthereum(true);
+        } else {
+          setIsEthereum(false);
         }
       } catch (err) {
         throw new Error("Please connect to Ethereum");
