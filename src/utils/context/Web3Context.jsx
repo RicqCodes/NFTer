@@ -40,7 +40,7 @@ export const Web3Provider = ({ children }) => {
           method: "net_version",
         });
         console.log(networkId);
-        if (networkId === "1" || "0x1" || "0xf00") {
+        if (networkId === "1" || networkId === "0x1" || networkId === "0xf00") {
           setIsEthereum(true);
         } else {
           setIsEthereum(false);
