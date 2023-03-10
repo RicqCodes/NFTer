@@ -18,8 +18,8 @@ const NftList = () => {
   };
 
   useEffect(() => {
-    account && isEthereum && isConnected && getNft();
-  }, [account, isConnected]);
+    account && getNft();
+  }, [account]);
 
   return (
     <>
@@ -28,7 +28,7 @@ const NftList = () => {
           You are on a wrong chain. Connect wallet to Ethereum network
         </WarningText>
       )}
-      {!isConnected && <WarningText>Please connect your wallet!</WarningText>}
+      {!isConnected && <WarningText>Please connect your wallet!</WarningText>}:
       {isConnected && isEthereum && (
         <NftListElement>
           {isLoading ? (

@@ -5,7 +5,6 @@ import NftModal from "./NftModal";
 import alt from "../../assets/alt.jpg";
 import { useToggle } from "@/utils/hooks/useToggle";
 import { color, shadow } from "@/styles/reuseable/utils.styled";
-import { device } from "../../styles/reuseable/utils.styled";
 
 const NftCard = ({ nft }) => {
   const { toggle, toggleRef, handleToggle, toggledElementRef } = useToggle();
@@ -72,11 +71,9 @@ const NftCardContainer = styled.div`
   box-shadow: none;
   bottom: 0;
 
-  @media (hover: hover) and (pointer: fine) {
-    &:active {
-      bottom: 30px;
-      box-shadow: ${() => shadow("xxxl")};
-    }
+  &:active {
+    bottom: 30px;
+    box-shadow: ${() => shadow("xxxl")};
   }
 `;
 
@@ -115,7 +112,7 @@ const CardImage = styled.div`
   border: 1px solid ${() => color("primary", 100)};
   transition: all 0.5s;
 
-  @media (hover: hover) and (pointer: fine) {
+  @media (hover: hover) {
     &:hover {
       scale: 1.1;
     }

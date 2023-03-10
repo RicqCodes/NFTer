@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate, Navigate, Outlet } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 import Web3 from "web3";
 import { useWeb3 } from "@/utils/hooks/useWeb3";
 
@@ -9,8 +9,7 @@ function ProtectLandingPage() {
 
   useEffect(() => {
     if (isConnected) {
-      // navigate("/nfts");
-      <Navigate to="/nfts" />;
+      navigate("/nfts");
     }
   }, [isConnected]);
 
