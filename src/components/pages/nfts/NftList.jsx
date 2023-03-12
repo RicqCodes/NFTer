@@ -19,7 +19,7 @@ const NftList = () => {
 
   useEffect(() => {
     account && isEthereum && isConnected && getNft();
-  }, [account, isConnected]);
+  }, [account, isConnected, isConnected]);
 
   return (
     <>
